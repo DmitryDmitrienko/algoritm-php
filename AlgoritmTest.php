@@ -21,6 +21,36 @@ class AlgoritmTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(array(1 ,2 ,3 ,3, 11, 90 ,100), $t->array);
 	}
 
+	function testQuickSortNotSort(){
+		$t = new Algoritm(array(1,2,3,4,5,6,7));
+		$t->quicksort();
+		$this->assertEquals(array(1,2,3,4,5,6,7), $t->array);
+	}
+
+	function testBubblesort(){
+		$t = new Algoritm(array(3,2,1));
+		$t->bubblesort();
+		$this->assertEquals(array(1,2,3), $t->array);
+	}
+
+	function testBubblesortSecond(){
+		$t = new Algoritm(array(11,6,55,8,60,5));
+		$t->bubblesort();
+		$this->assertEquals(array(5,6,8,11,55,60), $t->array);
+	}
+
+	function testBubbleSortThird(){
+		$t = new Algoritm(array(11, 2, 3, 90, 100, 3, 1));
+		$t->bubblesort();
+		$this->assertEquals(array(1 ,2 ,3 ,3, 11, 90 ,100), $t->array);
+	}
+
+	function testBubbleSortNotSort(){
+		$t = new Algoritm(array(1,2,3,4,5,6,7));
+		$t->bubblesort();
+		$this->assertEquals(array(1,2,3,4,5,6,7), $t->array);
+	}
+
 	function testMaxIndexEqualAll(){
 		$arr = array(1,1,1,1,1,1,1,1);
 		$t = new Algoritm($arr);

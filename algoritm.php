@@ -32,6 +32,7 @@ class Algoritm{
 	}
 	function getArray(){return $this->arr;}
 	function setArray($arr){$this->arr = $arr;}
+	
 	function quicksort($l=0, $r=0){
 		$i = null; // обозначает левую границу 
 		$j = null; // обозначет праую границу
@@ -72,6 +73,18 @@ class Algoritm{
 		if($i < $r) $this->quicksort($i, $r);
 		if($j > $l) $this->quicksort($l, $j);
 	}
+
+	function bubblesort(){
+		$len = count($this->arr);
+		for($i = 0 ; $i < $len-1; $i++){
+			for($j = 0; $j < $len - $i - 1 ; $j++){
+				if($this->arr[$j] > $this->arr[$j+1]){
+					$this->swap($j, $j+1);
+				}
+			}
+		}
+	}
+
 	function max_index($index_start, $index_end){
 		$this->checkParametersQuicksort($index_start, $index_end);
 		$this->checkArray($this->arr);
